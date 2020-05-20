@@ -7,4 +7,4 @@ RUN npm install
 COPY app .
 
 EXPOSE 1337
-CMD ["node", "server.js"]
+CMD ["node", "app/server.js"]

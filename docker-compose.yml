@@ -6,6 +6,9 @@ services:
       dockerfile: node.dockerfile
     container_name: nodejs
     restart: unless-stopped
+    command: npm run dev
+    volumes:
+    - ./app/app:/usr/src/app/app
     ports:
     - "1337"
   webserver:
@@ -18,3 +21,12 @@ services:
       - ./nginx-conf:/etc/nginx/conf.d
     depends_on:
       - nodejs
+  db:
+    image: postgres
+    restart: always
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: app
+

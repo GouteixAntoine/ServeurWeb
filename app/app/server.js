@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 1337
+const db = require('./db')
 
 app.set('view engine', 'pug');
 
