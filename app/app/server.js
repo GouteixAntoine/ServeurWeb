@@ -5,8 +5,6 @@ const port = 1337
 const db = require('./db')
 const redis = require('./redis')
 
-
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
