@@ -1,6 +1,61 @@
+//- doctype html
+//- html
+//-    head
+//-       title="NodeJS app"
+//-       link(rel="stylesheet", href="/static/css/main.css" type="text/css")
+//-    body
+//-       p.greetings#people Hello World!
+//-       script(src='/static/js/main.js')
+
 doctype html
-html
-   head
-      title = "Hello Pug"
-   body
-      p.greetings#people Hello World!
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Pug Bootstrap Examples
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(href='static/css/main.css', rel='stylesheet')
+
+    link(href='/css/bootstrap-responsive.css', rel='stylesheet')
+  body
+    .container-narrow
+      .masthead
+        ul.nav.nav-pills.pull-right
+          li.active
+            a(href='#') home
+          li
+            a(href='https://github.com/GouteixAntoine/ServeurWeb') github
+        h3.muted IIM NodeJS app
+      hr
+      .jumbotron
+        h1 Bootstrap examples, in Pug!
+        p.lead
+          | The Bootstrap examples translated into Pug and instantly ready to view with Express
+        a.btn.btn-large.btn-success(href='https://github.com/GouteixAntoine/ServeurWeb') Source on Github
+      hr
+      .row-fluid.marketing
+        .span6
+          h4 App
+          p
+            | NodeJS
+          p
+            | Express
+          p
+            | nodemon
+          p
+            | sequelize
+          h4 Database
+          p
+            | Postgres
+        .span6
+          h4 Container
+          p
+            | Docker
+          h4 Cache
+          p
+            | Redis
+      hr
+      .footer
+        p © Alexandre Zerah/Antoine  Gouteix
+
