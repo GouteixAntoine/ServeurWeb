@@ -14,5 +14,5 @@ app.get("/nice", function(req, res) {
 });
 
 app.listen(port, function() {
-    console.log("Express Node.js le serveur troune sur le port 1337.");
+    console.log("Express Node.js le serveur tourne sur le port 1337.");
 })
