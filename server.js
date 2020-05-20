@@ -1,16 +1,16 @@
-var express = require("express");
-var app = express();
-var port = 1337
+const express = require("express");
+const app = express();
+const port = 1337
 
-
-/* Route */
-app.get("/", function(req, res) {
-    res.sendFile(__dirname+'/index.html')
-});
+app.set('view engine', 'pug');
 
 /* Route /nice */
 app.get("/nice", function(req, res) {
     res.send("Nice");
+});
+
+app.get('/', function (req, res) {
+    res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
 app.listen(port, function() {
