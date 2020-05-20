@@ -1,4 +1,6 @@
 # IIM nodeJS project
 
-Antoine Gouteix
-Alexandre Zerah
+<ul>
+  <li>Antoine Gouteix</li>
+  <li>Alexandre Zerah</li>
+</ul>
