@@ -1,16 +1,29 @@
 version: '3.0'
 services:
-  nodejs:
+  server:
     build:
-      context: .
-      dockerfile: node.dockerfile
-    container_name: nodejs
+      context: ./app/server/
+    container_name: server
     restart: unless-stopped
     command: npm run dev
     volumes:
-    - ./app/app:/usr/src/app/app
+    - ./app/server:/usr/app
+    - /usr/app/node_modules
+#    ports:
+#    - "9000"
+  client:
+    build:
+      context: ./app/client/
+    container_name: client
+    volumes:
+    - ./app/client/:/usr/app
+    - /usr/app/node_modules
+    depends_on:
+      - server
     ports:
-    - "1337"
+    - "3000:3000"
+    stdin_open: true
+    restart: unless-stopped
   webserver:
     image: nginx:mainline-alpine
     container_name: webserver
@@ -20,7 +33,7 @@ services:
     volumes:
       - ./nginx-conf:/etc/nginx/conf.d
     depends_on:
-      - nodejs
+      - server
   db:
     image: postgres
     restart: always
